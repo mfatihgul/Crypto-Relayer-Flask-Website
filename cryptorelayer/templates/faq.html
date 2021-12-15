@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--Page Header Start-->
+<section class="page-header" style="background-image: url(../static/images/kaynak/grafik.jpg);">
+    <div class="container">
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{{ url_for('index') }}">Homepage</a></li>
+            <li><span>FAQ</span></li>
+        </ul>
+        <h2>Frequently Asked Questions</h2>
+    </div>
+</section>
+<section class="services_details">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-7">
+                <div class="services_details_right">
+                    <div class="services_details_right_img">
+                        <img src="{{ url_for('static', filename='images/kaynak/shortwall.jpg') }}" alt="">
+                        <div class="services_details_right_icon">
+                            <span class="flaticon-petroleum"></span>
+                        </div>
+                    </div>
+                    <div class="services_details_right_text">
+                        <h4>Crypto Relayer </h4>
+                        <p class="welcome_one_right_first_text">
+                            Prelayer, combines the world's largest crypto signals and technical analysis channels
+                        and offers it in a cheaper package.</p>
+                        <p class="welcome_one_right_second_text">Prelayer is a service that provides all 
+                            of the premium crypto signal channels at once for a cheaper price.</p>
+                    </div>
+                    
+                    <div class="faq_one_right">
+                        <div class="accrodion-grp" data-grp-name="faq-one-accrodion">
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h4>What is Prelayer exactly?</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>Prelayer, is the first project of Crypto Relayer.
+                                            It provides all of the premium crypto signal channels in one package.
+                                            When you sign up for this package, we make you join all of the premium
+                                            signal channels in Telegram.
+                                        </p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                            <div class="accrodion active">
+                                <div class="accrodion-title">
+                                    <h4>When the bots are going to be ready?</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>We don't want to share the dates right away. But we are working on it
+                                            since the Prelayer project start.</p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h4>Do you offer a profit guarantee?</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>We are offering the best channels in the world. So, if you know how to trade
+                                            and how to implement your strategies to the trades, you can make some good money.
+                                        </p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h4>What if i don't know how to trade?</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>We can show the way how to trade. But sometimes, it's not going to be enough.
+                                            So, you always should improve yourself. You have to learn how to decide faster
+                                            in this market.
+                                        </p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+{% endblock content %}
+{% block finalScript %}
+    <script>
+        $('#ssspage').toggleClass('current');
+    </script>
+{% endblock finalScript %}

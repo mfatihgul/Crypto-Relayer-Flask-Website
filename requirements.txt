@@ -1,0 +1,13 @@
+autopep8==1.5.7
+click==8.0.1
+# Editable install with no version control (cryptorelayer==1.0.0)
+-e /home/mfg7ix/Belgeler/cryptorelayer.com
+Flask==2.0.1
+Flask-WTF==0.15.1
+itsdangerous==2.0.1
+Jinja2==3.0.1
+MarkupSafe==2.0.1
+pycodestyle==2.7.0
+toml==0.10.2
+Werkzeug==2.0.1
+WTForms==2.3.3

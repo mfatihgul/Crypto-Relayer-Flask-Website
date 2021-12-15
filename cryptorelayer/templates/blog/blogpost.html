@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--Page Header Start-->
+<section class="page-header" style="background-image: url(../static/images/kaynak/grafik.jpg);">
+    <div class="container">
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{{ url_for('index') }}">Anasayfa</a></li>
+            <li><span>Blog</span></li>
+        </ul>
+        <h2> {{ post['title'] }} </h2>
+    </div>
+</section>
+
+<section class="blog_details">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-7">
+                <div class="blog_details_left">
+                    <div class="blog_details_left_image">
+                        <img style="max-width: 100%;" src="{{ url_for('static', filename='uploads/'+ post['image']) }}"
+                            alt="">
+                        <div class="blog_details_date_box">
+                            {% if g.user %}
+                            <li style="list-style-type: none;">
+                                <a style="color: white;" class="action"
+                                    href="{{ url_for('blog.update', id=post['id']) }}">Edit</a>
+                            </li>
+                            {% else %}
+                            <p> {{post['created'].strftime('%Y-%m-%d') }} </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="blog_details_content">
+                        <ul class="list-unstyled blog-details__meta">
+                            <li><a href="#"><i class="far fa-user-circle"></i> {{ post['username'] }} </a></li>
+                            <li><a href="#"><i class="far fa-comments"></i> 2 Yorum</a>
+                            </li>
+                        </ul>
+                        <div class="blog_details_title">
+                            <h3><a href="#"> {{ post['title'] }} </a></h3>
+                        </div>
+                        <div class="blog_details_text">
+                            <p class="text-1">
+                                {{ post['body'] | safe }}
+                            </p>
+                            
+                        </div>
+                    </div>
+                    <div class="blog_detail__bottom">
+                        <p class="blog_detail__tags">
+                            <span>Kategori:</span>
+                            <a href="#"> {{ post['category'] }} </a>
+                        </p>
+                        <div class="blog_detail__social-list">
+                            <a href="#"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                    <div class="author-one">
+                        <div class="author-one__image">
+                            <img src="{{ url_for('static', filename='images/blog/author-1-1.jpg') }}" alt="">
+                        </div>
+                        <div class="author-one__content">
+                            <h3> {{ post['username'] }} </h3>
+                            <p>Developer - Gamer - Designer - Technical Analyst</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-5">
+                <div class="blog_details_sidebar">
+                    <div class="sidebar__single sidebar__search">
+                        <form action=" {{ url_for('blog.search') }} " class="sidebar__search-form">
+                            <input id="searchvalue" type="search" placeholder="Arama" name="search">
+                            <button value="Search" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div class="sidebar__single sidebar__category">
+                        <h3 class="sidebar__title">Kategoriler</h3>
+                        <ul class="sidebar__category-list list-unstyled">
+                            <li><a href="#">Prelayer<i></i></a></li>
+                            <li><a href="#">Telegram Botları<i></i></a></li>
+                            <li><a href="#">Binance Botları<i></i></a></li>
+                            <li><a href="#">İndikatörler<i></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar__single sidebar__post">
+                        <h3 class="sidebar__title">Son Blog Postları</h3>
+                        <ul class="sidebar__post-list list-unstyled">
+                            {% for post in posts %}
+                            <li>
+                                <div class="sidebar__post-image">
+                                    <img src="{{ url_for('static', filename='uploads/'+ post['image']) }}" alt="">
+                                </div>
+                                <div class="sidebar__post-content">
+                                    <h3>
+                                        <a href="#" class="sidebar__post-content_meta">{{post['created'].strftime('%Y-%m-%d') }}</a>
+                                        <a href="#" class="sibebar_post_content_title"> {{ post['title'] }} </a>
+                                    </h3>
+                                </div>
+                            </li>
+                            {% endfor %}
+                            
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!--Page Header Start-->
+<section class="page-header" style="background-image: url(../static/images/kaynak/grafik.jpg);">
+    <div class="container">
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{{ url_for('index') }}">Homepage</a></li>
+            <li><span>Contact</span></li>
+        </ul>
+        <h2>Contact</h2>
+    </div>
+</section>
+<!--Contact One Start-->
+<section class="contact-one">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="contact_one_left">
+                    <div class="block-title text-left">
+                        <h4>Contact with us</h4>
+                        <h2>Your opinions important for us</h2>
+                    </div>
+                    <div class="contact_one_left-text">
+                        <p> To be in contact with Crypto Relayer team, you can fill out the form or
+                            you can reach us in the social links below</p>
+                    </div>
+                    <div class="contact_one_left__social">
+                        <a href="https://twitter.com/CryptoRelayer" class="tw-clr"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="fb-clr"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#" class="dr-clr"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="ins-clr"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-7">
+                <div class="contact-one__form__wrap">
+                    <!-- <form action="inc/sendemail.php" class="contact-one__form contact-form-validated">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="text" name="name" placeholder="Your Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="email" name="email" placeholder="Email Address">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <input type="text" name="Subject" placeholder="Subject">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <textarea name="message" placeholder="Your Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="input-group contact__btn">
+                                    <button type="submit" class="thm-btn contact-one__btn">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form> -->
+
+                    <iframe
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSc7l6NrlaNBBX24nEMB3lfBGWaGsgcR_PoCl9WbsJNgfdXW_w/viewform?embedded=true"
+                        width="640" height="979" frameborder="0" marginheight="0" marginwidth="0">Yükleniyor…</iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+{% block finalScript %}
+<script>
+    $('#iletisimpage').toggleClass('current');
+</script>
+{% endblock finalScript %}

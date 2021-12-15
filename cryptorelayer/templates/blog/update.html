@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- <form method="post">
+    <label for="title">Title</label>
+    <input name="title" id="title"
+      value="{{ request.form['title'] or post['title'] }}" required>
+    <label for="body">Body</label>
+    <textarea name="body" id="body">{{ request.form['body'] or post['body'] }}</textarea>
+    <input type="submit" value="Save">
+  </form>
+  <hr>
+  <form action="{{ url_for('blog.delete', id=post['id']) }}" method="post">
+    <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+  </form> -->
+
+<script>
+  tinymce.init({
+    selector: '#blogTextArea',
+    height: 500,
+
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchplace visualblocks code fullscreen',
+      'insertdatetime media table paste imagetools wordcount'
+    ],
+    toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alighright alignjustify bullist numlist outdent indent | link image',
+    content_style: 'body { font-family: Poppins, Helvetica, Arial, sans-serif; font-size:14px; }'
+
+  });
+</script>
+
+<section class="page-header" style="background-image: url(../static/images/kaynak/grafik.jpg);">
+  <div class="container">
+    <ul class="thm-breadcrumb list-unstyled">
+      <li><a href="{{ url_for('index') }}">Anasayfa</a></li>
+      <li><span>Blog</span></li>
+    </ul>
+    <h2>Blog Güncelle</h2>
+  </div>
+</section>
+
+<br><br>
+
+<div class="jumbotron" style="width: 60%; 
+margin: auto; box-shadow: 0 4px 8px 0 rgba(63, 53, 53, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+  <h3>Post Image</h3> <br>
+  <img style="max-width: 100%;" src="{{ url_for('static', filename='uploads/'+ post['image']) }}" alt="">
+</div>
+
+<div class="jumbotron" style="width: 60%;
+margin: auto;   box-shadow: 0 4px 8px 0 rgba(63, 53, 53, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+  <form action="" method="post" enctype="multipart/form-data">
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Başlık</span>
+      </div>
+      <input id="title" type="text" name="title" class="form-control"
+        value="{{ request.form['title'] or post['title'] }}" required>
+    </div>
+    <br>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Kapak Resmi</span>
+      </div>
+      <div class="custom-file">
+        <input type="file" name="blogPhoto" class="custom-file-input" id="inputGroupFile01" accept="image/*">
+        <label class="custom-file-label" for="inputGroupFile01">Seçmek için tıkla</label>
+      </div>
+    </div>
+    <br>
+    <!-- <label for="title" style="padding-left: 30px; font-weight: bold;">Başlık</label> 
+    <input name="title" id="title" value="{{ request.form['title'] }}" required> <br /> -->
+    <!-- <label for="body" style="padding-left: 30px; font-weight: bold; font-size: 1.4rem;">Body</label> <br /> -->
+    <textarea id="blogTextArea" name="body" placeholder="İçerik">
+      {{ request.form['body'] or post['body'] }}
+    </textarea>
+    <br>
+    <div class="input-group contact__btn" style="width: 100%;">
+      <button type="submit" class="thm-btn contact-one__btn" style="width: 100%; background-color: green;"
+        value="Save">Kaydet</button>
+
+
+    </div>
+    <br>
+
+  </form>
+  <form action="{{ url_for('blog.delete', id=post['id']) }}" method="POST">
+    <button type="submit" value="Delete" class="thm-btn contact-one__btn" style="width: 100%;  background-color: red;"
+      onclick="return confirm('Are you sure?');">Sil</button>
+  </form>
+</div>
+<br><br>
+{% endblock %}

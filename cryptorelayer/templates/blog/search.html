@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--Page Header Start-->
+<section class="page-header" style="background-image: url(../static/images/kaynak/grafik.jpg);">
+    <div class="container">
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{{ url_for('index') }}">Anasayfa</a></li>
+            <li><span>Blog</span></li>
+        </ul>
+        <h2>Blog</h2>
+        {% if g.user %}
+        <div class="header_btn_1">
+            <a href="{{ url_for('blog.create') }}">Blog Ekle</a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!--Blog One Start-->
+<section class="blog_one blog-page">
+    <div class="container">
+
+
+        {% for message in get_flashed_messages() %}
+        <div class="flash alert alert-danger"> {{message}} </div>
+        {% endfor %}
+
+
+
+        <div class="row">
+            <!--BLOG POST START-->
+            {% for post in posts %}
+            <div class="col-xl-4 col-lg-4">
+
+                <div class="blog_one_single wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="0ms">
+                    <div class="blog_one_image">
+                        <!-- <img src="{{ url_for('static', filename='images/blog/blog--page-img-1.jpg') }}" alt=""> -->
+                        <img src="{{ url_for('static', filename='uploads/'+ post['image']) }}" alt="">
+                        
+                        <div class="blog_one_date_box">
+                            <!-- <p>20 <br> Oct</p> -->
+                            {% if g.user %}
+                            <li style="list-style-type: none;">
+                                <a style="color: white;" class="action"
+                                    href="{{ url_for('blog.update', id=post['id']) }}">Edit</a>
+                            </li>
+                            {% else %}
+                            <p> {{post['created'].strftime('%Y-%m-%d') }} </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="blog-one__content">
+                        <ul class="list-unstyled blog-one__meta">
+                            <li><a href="#"><i class="far fa-user-circle"></i> {{ post['username'] }}
+                                </a>
+                            </li>
+                            <li><a href="#"><i class="far fa-comments"></i> 2 Comments</a></li>
+
+                        </ul>
+                        <div class="blog_one_title">
+                            <h3><a href="{{ url_for('blog.blogpost', id=post['id']) }}"> {{ post['title'] }} </a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %} 
+            <!--BLOG POST END-->
+
+
+        </div>
+        <div class="text-center blog-page__load-more">
+            <a href="{{ url_for('blog') }}" class="thm-btn">DAHA FAZLA</a><!-- /.thm-btn -->
+        </div><!-- /.text-center -->
+    </div>
+</section>
+
+
+
+
+
+{% endblock content %}
+{% block finalScript %}
+<script>
+    $('#blogpage').toggleClass('current');
+</script>
+{% endblock finalScript %}

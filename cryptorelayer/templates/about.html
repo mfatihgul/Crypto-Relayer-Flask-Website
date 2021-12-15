@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!--Page Header Start-->
+<section class="page-header" style="background-image: url(../static/images/kaynak/grafik.jpg);">
+    <div class="container">
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{{ url_for('index') }}">Homepage</a></li>
+            <li><span>About</span></li>
+        </ul>
+        <h2>About Us</h2>
+    </div>
+</section>
+
+{% include 'components/welcomeone.html' %}
+{% include 'components/whoarewe.html' %}
+<br /><br /><br /><br />
+<section class="cta_two jarallax" data-jarallax data-speed="0.3" data-imgPosition="50% 80%">
+    <img src="{{ url_for('static', filename='images/kaynak/moderncity.jpg') }}" alt="" class="image-layer jarallax-img">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="cta_two_left">
+                    <div class="cta_two_left_content">
+                        <p>See How It Works</p>
+                        <h2>Crypto Relayer is a series of solutions.</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="cta_two_right">
+                    <div class="cta_two_video_box">
+                        <div class="cta_two_video_text">
+                            <p>Watch Video</p>
+                        </div>
+                        <div class="cta_two_video_button_box">
+                            <a href="#"
+                                class="video-two__btn video-popup"><i class="fa fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+{% block finalScript %}
+    <script>
+        $('#hakkimizdapage').toggleClass('current');
+    </script>
+{% endblock finalScript %}

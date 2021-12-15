@@ -1,0 +1,237 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+{% include 'components/slider.html' %}
+
+{% include 'components/hugeredlabel.html' %}
+
+{% include 'components/welcomeone.html' %}
+
+{% include 'components/ourservices.html' %}
+
+
+
+<section id="howitworks" class="inspiring_solutuions_one jarallax" data-jarallax data-speed="0.3"
+    data-imgPosition="50% 0%">
+    <img src="{{ url_for('static', filename='images/kaynak/moderncity.jpg') }}" alt=""
+        class="image-layer jarallax-img">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="inspiring_solutuions_one_left">
+                    <div class="block-title text-left">
+                        <h4>HOW IT WORKS?</h4>
+                        <h2>You Can Watch The Video To See How It Works</h2>
+                    </div>
+                    <div class="inspiring_solutuions_one_btn">
+                        <a target="_blank" href="http://t.me/Prelayerbot" class="thm-btn">JOIN NOW</a>
+                    </div>
+                    <div class="inspiring_solutuions_one_left_bottom">
+                        <div class="inspiring_solutuions_one_left_bottom_image">
+                            <img src="{{ url_for('static', filename='images/kaynak/vipsmall.jpg') }}"
+                                alt="">
+                        </div>
+                        <div class="inspiring_solutuions_one_left_bottom_text">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <div class="icon_box">
+                                        <span class="flaticon-right-arrow"></span>
+                                    </div>
+                                    <div class="content">
+                                        <p>Technical Analysis Channels</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon_box">
+                                        <span class="flaticon-right-arrow"></span>
+                                    </div>
+                                    <div class="content">
+                                        <p>Spot Channels</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon_box">
+                                        <span class="flaticon-right-arrow"></span>
+                                    </div>
+                                    <div class="content">
+                                        <p>Futures Channels</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon_box">
+                                        <span class="flaticon-right-arrow"></span>
+                                    </div>
+                                    <div class="content">
+                                        <p>Market Analysis Channels</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon_box">
+                                        <span class="flaticon-right-arrow"></span>
+                                    </div>
+                                    <div class="content">
+                                        <p>Whale Channels</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="inspiring_solutuions_one_right">
+                    <div class="inspiring_solutuions_one_video_box">
+                        <a href="#" class="video-one__btn video-popup"><i
+                                class="fa fa-play"></i></a>
+                    </div>
+                    <div class="inspiring_solutuions_one_right_skills">
+                        <div class="text">
+                            <p>You don't have to be limited to just the spot market.
+                                While the vast majority are spot channels, among them you
+                                can find premium channels that can keep you up to date on futures and the market.
+
+                            </p>
+                        </div>
+                        <ul class="check list-unstyled">
+                            <li><i class="fa fa-check"></i>We work to provide a wide range of services.</li>
+                        </ul>
+
+                        <div class="progress-levels">
+                            <!--Skill Box-->
+                            <div class="progress-box">
+                                <div class="inner count-box">
+                                    <div class="text">Spot Channels</div>
+                                    <div class="bar">
+                                        <div class="bar-innner">
+                                            <div class="skill-percent">
+                                                <span class="count-text" data-speed="3000" data-stop="91">0</span>
+                                                <span class="percent">%</span>
+                                            </div>
+                                            <div class="bar-fill" data-percent="91"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Skill Box-->
+                            <div class="progress-box">
+                                <div class="inner count-box">
+                                    <div class="text">Futures Channels</div>
+                                    <div class="bar">
+                                        <div class="bar-innner">
+                                            <div class="skill-percent">
+                                                <span class="count-text" data-speed="3000" data-stop="40">0</span>
+                                                <span class="percent">%</span>
+                                            </div>
+                                            <div class="bar-fill" data-percent="40"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Skill Box-->
+                            <div class="progress-box">
+                                <div class="inner count-box">
+                                    <div class="text">Market Analysis Channels</div>
+                                    <div class="bar">
+                                        <div class="bar-innner">
+                                            <div class="skill-percent">
+                                                <span class="count-text" data-speed="3000" data-stop="30">0</span>
+                                                <span class="percent">%</span>
+                                            </div>
+                                            <div class="bar-fill" data-percent="30"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% include 'components/brands.html' %}
+
+<!-- {% include 'components/profits.html' %} -->
+
+{% include 'components/reviews.html' %}
+
+{% include 'components/whoarewe.html' %}
+
+
+<!--Blog One Start-->
+<section class="blog_one">
+    <div class="container">
+        <div class="block-title text-center">
+            <h4>Blog Posts</h4>
+            <h2>Latest Blog Posts</h2>
+        </div>
+        <div class="row">
+
+            {% for post in posts %}
+            <div class="col-xl-4 col-lg-4">
+                <!--Blog One Single-->
+                <div class="blog_one_single wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="0ms">
+                    <div class="blog_one_image">
+                        <img src="{{ url_for('static', filename='uploads/'+ post['image']) }}" alt="">
+                        <div class="blog_one_date_box">
+                            <p>{{post['created'].strftime('%Y-%m-%d') }}</p>
+                        </div>
+                    </div>
+                    <div class="blog-one__content">
+                        <ul class="list-unstyled blog-one__meta">
+                            <li><a href="#"><i class="far fa-user-circle"></i> {{ post['username'] }} </a></li>
+                            <li><a href="#"><i class="far fa-comments"></i> 2 Comments</a>
+                            </li>
+                        </ul>
+                        <div class="blog_one_title">
+                            <h3><a href="{{ url_for('blog.blogpost', id=post['id']) }}"> {{ post['title'] }} </a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+
+        </div>
+    </div>
+</section>
+
+<!--Call One Start-->
+<section class="call_one">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="call_one_inner">
+                    <div class="call_one_image">
+                        <img src="{{ url_for('static', filename='images/kaynak/botfather2.jpg') }}" alt="">
+                    </div>
+                    <div class="call_one_content">
+                        <div class="text">
+                            <p> You can visit our Telegram <br> bot now to  get information
+                                 about <br> participation and payment.</p>
+                        </div>
+                        <div class="call_one_number">
+                            <h4>Our Telegram Bot:</h4>
+                            <a target="_blank" href="http://t.me/Prelayerbot">Crypto Relayer Bot</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+{% block finalScript %}
+<script>
+    $('#anapage').toggleClass('current');
+</script>
+{% endblock finalScript %}

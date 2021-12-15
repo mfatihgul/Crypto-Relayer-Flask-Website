@@ -1,0 +1,4 @@
+include cryptorelayer/schema.sql
+graft cryptorelayer/static
+graft cryptorelayer/templates
+global-exclude *.pyc

@@ -1,0 +1,65 @@
+{% block whoarewe %}
+<!--Two_sections One Start-->
+<section class="two_sections_one">
+    <div class="two_sections_one_map" style="background-image: url(../static/images/resources/two_sections-1-map.png)">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-6">
+                <div class="two_sections_one_left">
+                    <ul class="list-unstyled">
+                        <li>
+                            <div class="icon_box">
+                                <span class="flaticon-robotic-arm"></span>
+                            </div>
+                            <div class="content_box">
+                                <h3>We Are Developers!</h3>
+                                <p>We transfer years of <br> experience to the crypto world. </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon_box">
+                                <span class="flaticon-responsibility"></span>
+                            </div>
+                            <div class="content_box">
+                                <h3>We Are Investors!</h3>
+                                <p>We offer you services with <br> years of experience.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon_box">
+                                <span class="flaticon-engineering-1"></span>
+                            </div>
+                            <div class="content_box">
+                                <h3>We Are Technical Analysts!</h3>
+                                <p>We pay attention to the performance <br> of the channels we offer you. </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-6">
+                <div class="two_sections_one_right">
+                    <div class="block-title text-left">
+                        <h4>Premium World</h4>
+                        <h2>Crypto Relayer</h2>
+                    </div>
+                    <div class="two_sections_one_text_box">
+                        <p>
+                            Crypto Relayer is a series of solutions. We are working to close the gaps we see
+                            in the world of Telegram, the world of crypto, and the world of technical analysis.
+                        </p>
+                    </div>
+                    <div class="two_sections_one_image">
+                        <img src="{{ url_for('static', filename='images/kaynak/sendemail.jpg') }}" alt="">
+                        <div class="two_sections_one_phone_number">
+                            <div class="icon"><span class="flaticon-email"></span> </div>
+                            <div class="phone_number"><a style="color: red !important;" href="mailto:cryptorelayer@gmail.com"> Send Email</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock whoarewe %}

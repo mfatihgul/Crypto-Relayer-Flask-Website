@@ -1,0 +1,70 @@
+{% block ourservices %}
+<!-- Our Services One Start -->
+<section id="ourservices" class="our_services_one">
+    <div class="container">
+        <div class="block-title text-center">
+            <h4>WHAT WE HAVE GOT?</h4>
+            <h2>Services We Offer</h2>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-lg-4">
+                <!-- Our Services One Single -->
+                <div class="our_services_one_single wow fadeInUp">
+                    <div class="our_services_one_image">
+                        <img src="{{ url_for('static', filename='images/kaynak/vip.jpg') }}" alt="">
+                        <div class="our_services_icon">
+                            <span class="flaticon-industrial"></span>
+                        </div>
+                    </div>
+                    <div class="our_services_one_content">
+                        <h3><a href=" {{ url_for('services') }} ">Premium <br> Channels</a></h3>
+                        <p>Always get informed about the crypto market with 150 Premium Crypto Signal Channel.
+                            Invest in a short, mid and long term</p>
+                        <a href="{{ url_for('services') }} " class="services_one_arrow_icon">
+                            <span class="flaticon-right-arrow"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4">
+                <!-- Our Services One Single -->
+                <div class="our_services_one_single wow fadeInUp" data-wow-delay="100ms">
+                    <div class="our_services_one_image">
+                        <img src="{{ url_for('static', filename='images/kaynak/botfather.jpg') }}
+                                " alt="">
+                        <div class="our_services_icon">
+                            <span class="flaticon-engineering"></span>
+                        </div>
+                    </div>
+                    <div class="our_services_one_content">
+                        <h3><a href="{{ url_for('services') }} ">Telegram <br>Bots</a></h3>
+                        <p> Get advanced Telegram bots with user managements system for your Premium Channels</p>
+                        <a href="{{ url_for('services') }} " class="services_one_arrow_icon">
+                            <span class="flaticon-right-arrow"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4">
+                <!-- Our Services One Single -->
+                <div class="our_services_one_single wow fadeInUp" data-wow-delay="200ms">
+                    <div class="our_services_one_image">
+                        <img src="{{ url_for('static', filename='images/kaynak/webhook.jpg') }}" alt="">
+                        <div class="our_services_icon">
+                            <span class="flaticon-engineering"></span>
+                        </div>
+                    </div>
+                    <div class="our_services_one_content">
+                        <h3><a href="{{ url_for('services') }} ">Binance <br> Bots</a></h3>
+                        <p>Make money while sleeping with Binance bots that you connect your account.</p>
+                        <a href="{{ url_for('services') }} " class="services_one_arrow_icon">
+                            <span class="flaticon-right-arrow"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock ourservices %}

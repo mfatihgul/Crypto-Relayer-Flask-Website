@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+        <title> {{title}} - Admin </title>
+    {% else %}
+        <title> Admin Panel </title>
+    {% endif %}
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/resources/logo.png') }}">
+
+    <!-- Fonts-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/swiper.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-select.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jarallax.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.mCustomScrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-datepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vegas.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nouislider.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nouislider.pips.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ziston-icon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flaticon.css') }}">
+
+    <!--TEMPLATE STYLES-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+
+</head>
+
+<body>
+
+    <div class="preloader">
+        <img src="{{ url_for('static', filename='images/loader.png') }}" alt="">
+    </div>
+
+    <div class="page-wrapper">
+
+
+        <div class="site-header__header-one-wrap clearfix">
+
+            <div class="header_top_one">
+                <div class="container">
+                    <div class="header_top_one_inner clearfix">
+
+                        <div class="header_top_one_inner_left float-left">
+                            <div class="header_social_1">
+                                <ul class="list-unstyled">
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="header_top_one_inner_left_text">
+                                <p>Crypto Relayer Dünyasına Hoşgeldiniz!</p>
+                            </div>
+                        </div>
+
+                        <div class="header_top_one_inner_right float-right">
+                            <div class="header_topmenu_1">
+                                <ul class="list-unstyled">
+                                    <li><a href="mailto:cryptorelayer@gmail.com"><span
+                                                class="flaticon-email"></span>cryptorelayer@gmail.com</a></li>
+                                    <li><a href="tel:92-666-888-0000"><span class="flaticon-telephone"></span>92 666 888
+                                            0000</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <header class="main-nav__header-one">
+                <div class="container">
+                    <nav class="header-navigation one stricky">
+                        <div class="container-box clearfix">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="main-nav__left main-nav__left_one float-left">
+                                <div class="logo_one">
+                                    <a href="{{ url_for('index') }}" class="main-nav__logo">
+                                        <img src="{{ url_for('static', filename='images/resources/logo.png') }}"
+                                            class="main-logo" alt="Awesome Image">
+                                        <span class="logo-span">Crypto Relayer</span>
+                                    </a>
+                                </div>
+                                <a href="#" class="side-menu__toggler">
+                                    <i class="fa fa-bars"></i>
+                                </a>
+                            </div>
+
+                            <div class="main-nav__main-navigation one float-right">
+                                <ul class=" main-nav__navigation-box float-left">
+                                    <li id="anapage">
+                                        <a href="{{ url_for('index') }}">Anasayfa</a>
+                                    </li>
+                                    <li id="hakkimizdapage">
+                                        <a href="{{ url_for('about') }}">Hakkımızda</a>
+                                    </li>
+                                    <li id="hizmetlerpage">
+                                        <a href="{{ url_for('services') }}">Hizmetler</a>
+                                    </li>
+                                    <li id="blogpage" class="dropdown">
+                                        <a href="{{ url_for('blog') }}">Blog</a>
+                                    </li>
+                                    <li id="ssspage">
+                                        <a href="{{ url_for('faq')}}">SSS</a>
+                                    </li>
+                                    <li id="iletisimpage">
+                                        <a href="{{ url_for('contact') }}">İletişim</a>
+                                    </li>
+                                </ul>
+                                <div class="main-nav__right main-nav__right_one float-left">
+                                    <div class="header_btn_1">
+                                        <a href="contact.html">MFG7IX</a>
+                                    </div>
+                                </div>
+                            </div><!-- /.navbar-collapse -->
+
+
+
+                        </div>
+                    </nav>
+                </div>
+            </header>
+        </div>
+
+
+        <!--burası giriş alanı-->
+        {% block content %}
+
+        {% endblock content %}
+
+        <!--Site Footer Start-->
+        <footer class="site-footer" style="background-image: url(assets/images/resources/footer-bg-img.jpg)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="footer-widget__column footer-widget__about wow fadeInUp animated"
+                            data-wow-delay="100ms">
+                            <div class="footer-widget__about_logo">
+                                <a href="index.html"><img src="assets/images/resources/logo.png" alt="">
+                                    <span class="logo-span">Crypto Relayer</span>
+                                </a>
+                            </div>
+                            <div class="footer-widget_about_text__box">
+                                <p>Crypto Relayer bir çözümler silsilesidir.</p>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <div class="footer-widget_about_icon">
+                                        <span class="flaticon-email"></span>
+                                    </div>
+                                    <div class="footer-widget_about_text">
+                                        <a href="mailto:cryptorelayer@gmail.com">cryptorelayer@gmail.com</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="footer-widget_about_icon">
+                                        <span class="flaticon-telephone"></span>
+                                    </div>
+                                    <div class="footer-widget_about_text">
+                                        <a href="tel:92-666-888-0000">92 666 888 0000</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="footer-widget__column footer-widget__explore wow fadeInUp animated"
+                            data-wow-delay="200ms">
+                            <div class="footer-widget__title">
+                                <h3>Keşfet</h3>
+                            </div>
+                            <ul class="footer-widget__explore_list list-unstyled">
+                                <li><a href="about.html">Hakkımızda</a></li>
+                                <li><a href="services.html">Hizmetler</a></li>
+                                <li><a href="contact.html">İletişim</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                            </ul>
+                            <ul class="footer-widget__explore_list_two list-unstyled">
+                                <li><a href="contact.html">SSS</a></li>
+                                <li><a href="contact.html">Gizlilik</a></li>
+                                <li><a href="about.html">Kullanım</a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="footer-widget__column footer-widget__latest_news wow fadeInUp animated"
+                            data-wow-delay="300ms">
+                            <div class="footer-widget__title">
+                                <h3>Blog Postları</h3>
+                            </div>
+                            <ul class="footer-widget__latest_news_list list-unstyled">
+                                <li>
+                                    <div class="footer-widget__latest_news_image">
+                                        <img src="assets/images/resources/fotter-l-n-img-1.jpg" alt="">
+                                    </div>
+                                    <div class="footer-widget__latest_news_content">
+                                        <h4>16 Oct, 2020</h4>
+                                        <p><a href="blog-details.html">We are Building New Quality Machinery</a></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="footer-widget__latest_news_image">
+                                        <img src="assets/images/resources/fotter-l-n-img-2.jpg" alt="">
+                                    </div>
+                                    <div class="footer-widget__latest_news_content">
+                                        <h4>16 Oct, 2020</h4>
+                                        <p><a href="blog-details.html">Organically grow the holistic world</a></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="footer-widget__column footer-widget__newsletter wow fadeInUp animated"
+                            data-wow-delay="400ms"
+                            style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
+                            <div class="footer-widget__title">
+                                <h3>Mail Aboneliği</h3>
+                            </div>
+                            <div class="footer-widget__newsletter_text">
+                                <p>Son güncellemelerden haberdar olmak için mail aboneliğini başlatabilirsiniz.</p>
+                            </div>
+                            <form data-url="ADD_YOUR_MAILCHIMP_FORM_URL" class="mc-form">
+                                <div class="footer_input-box">
+                                    <input type="email" name="EMAIL" id="mc-email" placeholder="Email Adresiniz">
+                                    <button type="submit" class="button"><span
+                                            class="flaticon-right-arrow"></span></button>
+                                </div>
+                            </form>
+                            <div class="mc-form__response"></div><!-- /.mc-form__response -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!--Site Footer Bottom Start-->
+        <div class="site-footer_bottom">
+            <div class="container">
+                <div class="site-footer_bottom_copyright">
+                    <p>© Copyright 2021 by <a href="#">mfg7f</a></p>
+                </div>
+                <div class="site-footer__social">
+                    <a href="#" class="tw-clr"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="fb-clr"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#" class="dr-clr"><i class="fab fa-dribbble"></i></a>
+                    <a href="#" class="ins-clr"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /.page-wrapper -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay side-menu__toggler mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close side-menu__toggler mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box">
+                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo.png" width="101"
+                        alt="" /></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container clearfix"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="flaticon-email"></i>
+                    <a href="mailto:cryptorelayer@gmail.com">cryptorelayer@gmail.com</a>
+                </li>
+                <li>
+                    <i class="flaticon-telephone"></i>
+                    <a href="tel:666-888-0000">666 888 0000</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__language">
+                    <img src="assets/images/resources/flag-1-1.jpg" alt="">
+                    <label class="sr-only" for="language-select">select language</label>
+                    <!-- /#language-select.sr-only -->
+                    <select class="selectpicker" id="language-select">
+                        <option value="english">English</option>
+                        <option value="arabic">Arabic</option>
+                    </select>
+                </div><!-- /.mobile-nav__language -->
+                <div class="mobile-nav__social">
+                    <a href="#" aria-label="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="facebook"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#" aria-label="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+
+
+
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+
+    <div class="search-popup">
+        <div class="search-popup__overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.search-popup__overlay -->
+        <div class="search-popup__inner">
+            <form action="#" class="search-popup__form">
+                <input type="text" name="search" placeholder="Type here to Search....">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/TweenMax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/wow.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/swiper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/typed-2.0.11.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vegas.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.validate.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/countdown.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/nouislider.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/isotope.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/appear.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jarallax.min.js') }}"></script>
+
+
+
+    <!-- template scripts -->
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+    {% block finalScript %}
+
+    {% endblock finalScript %}
+
+</body>
+
+</html>
